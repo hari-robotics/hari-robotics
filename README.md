@@ -3,7 +3,10 @@
 
 ### Academic Background
 - [x] BEng in Electrical and Elecronic Engineering - University of Nottingham Ningbo China, 2019 - 2023
-- [ ] PhD in Aerospace Engineering - University of Nottingham Ningbo China, 2023 - now
+- [ ] PhD in Aerospace Engineering - University of Nottingham Ningbo China, 2023 - 2024, Withdrawed
+
+### Work Experience
+- [ ] Shanghai Wuji Technology - Motor Control Engineer Intern, 2024.7 - 2024.10
 
 ### Focuses
 - Control theory and application
