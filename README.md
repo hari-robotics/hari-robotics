@@ -1,17 +1,5 @@
-## About me
-👋 Hello, my name is Zihao Zheng, welcome to my github homepage.
-
-### Academic Background
-- [x] BEng in Electrical and Elecronic Engineering - University of Nottingham Ningbo China, 2019 - 2023
-- [ ] PhD in Aerospace Engineering - University of Nottingham Ningbo China, 2023 - 2024, Withdrawn
-
-### Work Experience
-- [ ] Shanghai Wuji Technology - Motor Control Engineer Intern, 2024.7 - 2024.10
-
-### Focuses
-- Control theory and application
-- Low level embedded programming
-- Robotics and drones
+## My Info
+To know more about me, please go to my [blog](https://uon-hari.github.io/)
 
 ## Frequently Used
 <div align="center">
