@@ -1,5 +1,5 @@
 ## My Info
-To know more about me, please go to my [blog](https://uon-hari.github.io/)
+To know more about me, please go to my [blog](https://hari-robotics.github.io/)
 
 ## Frequently Used
 <div align="center">
