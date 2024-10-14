@@ -24,3 +24,9 @@
 
 
 If you are interested and want to know more about me, you can go to my [personal blog](https://hari-robotics.github.io/about/).
+
+<div align="right">
+  <a href="http://hits.dwyl.com/hari-robotics/hari-robotics">
+    <img height=20 align="right" src="https://hits.dwyl.com/hari-robotics/hari-robotics.svg?style=flat-square" />
+  </a>
+</div>
