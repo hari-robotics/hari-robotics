@@ -23,7 +23,7 @@
 
 
 
-If you are interested and want to know more about me, you can go to my [personal blog](https://hari-robotics.github.io/about/).
+If you are interested and want to know more about me, you can go to my [personal blog](https://hari-robotics.github.io/).
 
 <div align="right">
   <a href="http://hits.dwyl.com/hari-robotics/hari-robotics">
