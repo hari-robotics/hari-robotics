@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img height=180 align="center" src="./profile/stats.svg" />
+    <img height=165 align="center" src="./profile/stats.svg" />
   </a>
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img height=180 align="center" src="./profile/top-langs.svg" />
