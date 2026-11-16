@@ -5,39 +5,45 @@ on:
     - cron: "0 0 * * *" # Runs once daily at midnight
   workflow_dispatch:
 
+concurrency:
+  group: readme-cards
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
+      actions: write # keepalive: prevent the schedule from being auto-disabled after 60 days
+
+    env:
+      # PAT_1: classic PAT with `repo` + `read:user` scopes (same as upstream self-deploy).
+      # Falls back to GITHUB_TOKEN, which cannot read user-level stats ("Resource not accessible by integration").
+      STATS_TOKEN: ${{ secrets.PAT_1 || secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v6
 
       - name: Generate stats card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
         with:
           card: stats
-          options: username=hari-robotics&size_weight=0.5&count_weight=0.5&theme=transparent&show_icons=true
+          options: username=hari-robotics&theme=transparent&show_icons=true
           path: profile/stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ env.STATS_TOKEN }}
+          fail_on_error: true # keep the previous SVG instead of committing an error card
 
       - name: Generate top languages card
-        uses: readme-tools/github-readme-stats-action@v1
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
         with:
           card: top-langs
           options: username=hari-robotics&size_weight=0.5&count_weight=0.5&theme=transparent&layout=compact
           path: profile/top-langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate pin card
-        uses: readme-tools/github-readme-stats-action@v1
-        with:
-          card: pin
-          options: username=readme-tools&repo=github-readme-stats
-          path: profile/pin-readme-tools-github-readme-stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ env.STATS_TOKEN }}
+          fail_on_error: true
 
       - name: Commit cards
         run: |
@@ -46,3 +52,9 @@ jobs:
           git add profile/*.svg
           git commit -m "Update README cards" || exit 0
           git push
+
+      - name: Keep scheduled workflow alive
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/git_stats.yml/enable"
